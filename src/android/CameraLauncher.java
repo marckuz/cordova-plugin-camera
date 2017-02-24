@@ -701,7 +701,8 @@ public class CameraLauncher extends CordovaPlugin implements MediaScannerConnect
                 this.callbackContext.success(uriString);
             } else {
                 // If we don't have a valid image so quit.
-                if (!("image/jpeg".equalsIgnoreCase(mimeType) || "image/png".equalsIgnoreCase(mimeType))) {
+                //added gif support see: https://enmasse.atlassian.net/browse/OAR-1285
+                if (!("image/jpeg".equalsIgnoreCase(mimeType) || "image/png".equalsIgnoreCase(mimeType) || "image/gif".equalsIgnoreCase(mimeType))) {
                     LOG.d(LOG_TAG, "I either have a null image path or bitmap");
                     this.failPicture("Unable to retrieve path to picture!");
                     return;
